@@ -1,1 +1,1 @@
-# This is a simple accordion and I am told it is often given during technical interviews.
+# This is a simple accordion and I am told it is often given during technical interviews. 
