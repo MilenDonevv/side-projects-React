@@ -31,7 +31,7 @@ export default function Accordion() {
   return (
     <div className="wrapper">
       <button onClick={() => setEnableMultiSelection(!enableMultiSelection)}> {/* this is how we toggle multi selection*/}
-        Enable Multi Selection
+        {enableMultiSelection ? "Disable multi selection" : "Enable multi selection"}
       </button>
       <div className="accordion">
         {data && data.length > 0 ? (
