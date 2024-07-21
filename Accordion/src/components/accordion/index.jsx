@@ -4,12 +4,13 @@
 
 import { useState } from "react";
 import data from "./data.js";
+import './styles.css';
 
 export default function Accordion() {
   const [selected, setSelected] = useState(null);
 
   function handleSingleSelection(getCurrentId) {
-    setSelected(getCurrentId);
+    setSelected(getCurrentId === selected ? null : getCurrentId);
   }
 
   console.log(selected);
