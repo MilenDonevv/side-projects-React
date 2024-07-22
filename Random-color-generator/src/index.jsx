@@ -28,7 +28,11 @@ export default function RandomColorGenerator() {
     }
 
     function handleCreateRandomRgbColor() {
+        const r = randomColorUtility(256);
+        const g = randomColorUtility(256);
+        const b = randomColorUtility(256);
 
+        setColor(`rgb(${r},${g},${b})`);
     }
 
     
@@ -42,6 +46,17 @@ export default function RandomColorGenerator() {
             <button onClick={() => setTypeOfColor('hex')}>Generate HEX Color</button>
             <button onClick={() => setTypeOfColor('rgb')}>Generate RGB Color</button>
             <button onClick={typeOfColor === 'hex' ? handleCreateRandomHexColor : handleCreateRandomRgbColor}>Generate Random Color</button>
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                color: '#fff',
+                fontSize: '60px',
+                marginTop: '50px'
+            }}>
+                <h3>{typeOfColor === 'hex' ? 'HEX color' : 'RGB color'}</h3>
+                <h1>{color}</h1>
+            </div>
         </div>
     );
 }
