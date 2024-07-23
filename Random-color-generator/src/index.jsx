@@ -1,7 +1,7 @@
 // #456789 - HEX color
 // rgb(25,45,65) - rgb color
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // 2 states - 1 for the type and 1 for the color
 
@@ -16,14 +16,11 @@ export default function RandomColorGenerator() {
     }
 
     function handleCreateRandomHexColor() {
-
         const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
         let hexColor = "#";
-
         for (let i = 0; i < 6; i++) {
-            hexColor += hex[randomColorUtility(hex.length)]
+            hexColor += hex[randomColorUtility(hex.length)];
         }
-
         setColor(hexColor);
     }
 
@@ -31,17 +28,26 @@ export default function RandomColorGenerator() {
         const r = randomColorUtility(256);
         const g = randomColorUtility(256);
         const b = randomColorUtility(256);
-
         setColor(`rgb(${r},${g},${b})`);
     }
 
-    
+    useEffect(() => {
+        if (typeOfColor === "rgb") {
+            handleCreateRandomRgbColor();
+        } else {
+            handleCreateRandomHexColor();
+        }
+    }, [typeOfColor]);
 
     return (
         <div style={{
-            width: "1000vw",
+            width: "100vw",
             height: "100vh",
-            background: color
+            background: color,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
         }}>
             <button onClick={() => setTypeOfColor('hex')}>Generate HEX Color</button>
             <button onClick={() => setTypeOfColor('rgb')}>Generate RGB Color</button>
@@ -52,7 +58,9 @@ export default function RandomColorGenerator() {
                 alignItems: 'center',
                 color: '#fff',
                 fontSize: '60px',
-                marginTop: '50px'
+                marginTop: '50px',
+                flexDirection: "column",
+                gap: "20px"
             }}>
                 <h3>{typeOfColor === 'hex' ? 'HEX color' : 'RGB color'}</h3>
                 <h1>{color}</h1>
