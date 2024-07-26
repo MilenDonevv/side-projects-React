@@ -5,19 +5,19 @@ import {FaStar} from 'react-icons/fa'
 
 export default function StarRating({noOfStars = 5}) {
 
-    const [rating, setRating] = useState(0)
-    const [hover, setHover] = useState(0);
+    const [rating, setRating] = useState(0);
+    const [hover, setHover] = useState(0); // the index we're hovering over
 
     function handleClick(getCurrentIndex) {
-
+        console.log(getCurrentIndex);
     }
 
     function handleMouseEnter(getCurrentIndex) {
-
+        console.log(getCurrentIndex);
     }
 
     function handleMouseLeave(getCurrentIndex) {
-
+        console.log(getCurrentIndex);
     }
 
 
@@ -27,13 +27,15 @@ export default function StarRating({noOfStars = 5}) {
                 [...Array(noOfStars)].map((_, index) => {
                     index += 1
 
-                    return 
+                    return (
                     <FaStar
                     key={index}
                     onClick={() => handleClick(index)}
-                    onMouseMove={() => FaStar(props: IconBaseProps): JSX.Element }
-                    onMouseLeave={() => handleMouseLeave}
+                    onMouseMove={() => handleMouseEnter(index)}
+                    onMouseLeave={() => handleMouseLeave(index)}
+                    size={40}
                     />
+                    )
                 })
             }
         </div>
