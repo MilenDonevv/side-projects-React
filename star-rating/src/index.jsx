@@ -10,17 +10,17 @@ export default function StarRating({noOfStars = 5}) {
     const [hover, setHover] = useState(0); // the index we're hovering over
 
     function handleClick(getCurrentIndex) {
-        console.log(getCurrentIndex);
+        // console.log(getCurrentIndex);
         setRating(getCurrentIndex);
     }
 
     function handleMouseEnter(getCurrentIndex) {
-        console.log(getCurrentIndex);
+        // console.log(getCurrentIndex);
         setHover(getCurrentIndex);
     }
 
     function handleMouseLeave(getCurrentIndex) {
-        console.log(getCurrentIndex);
+        // console.log(getCurrentIndex);
         setHover(rating);
     }
 
