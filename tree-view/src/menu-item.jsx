@@ -20,7 +20,7 @@ export default function MenuItem({item}) {
 
     return (
         <li>
-            <div style={{display: 'flex', gap: '20px'}}> 
+            <div className="menu-item"> 
             <p>{item.label}</p>
             {
                 item && item.children && item.children.length ? <span onClick={() => handleToggleChildren(item.label)}>
