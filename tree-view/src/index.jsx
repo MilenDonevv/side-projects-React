@@ -1,4 +1,5 @@
 import MenuList from "./menu-list";
+import './styles.css'
 
 
 
