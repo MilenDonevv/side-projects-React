@@ -1,16 +1,25 @@
+// creating a custom hook for this project !!!
 
-
+import useLocalStorage from "./useLocalStorage.jsx"
+import './theme.css'
 
 
 export default function LightDarkMode() {
 
+    const [theme, setTheme] = useLocalStorage('theme', 'dark')
 
+
+    function handleToggleTheme() {
+        setTheme(theme === 'light' ? 'dark' : 'light')
+    }
+
+    console.log(theme);
 
     return (
-        <div className="light-dark-mode">
+        <div className="light-dark-mode" data-theme={theme}>
             <div className="container">
                 <p>Hello world</p>
-                <button>Change Theme</button>
+                <button onClick={handleToggleTheme}>Change Theme</button>
             </div>
         </div>
     )
