@@ -8,6 +8,7 @@ export default function QRCodeGenerator() {
 
     function handleGenerateQrCode() {
         setQrCode(input);
+        setInput('');
     }
 
 
@@ -15,14 +16,15 @@ export default function QRCodeGenerator() {
         <div>
             <h1>QR Code Generator</h1>
             <div>
-                <input onChange={(e) => setInput(e.target.value)}type="text" name="qr-code" placeholder="Enter your value here" />
-                <button disabled={input && input.trim() !== ''} onClick={handleGenerateQrCode}>Generate</button>
+                <input onChange={(e) => setInput(e.target.value)} type="text" name="qr-code" placeholder="Enter your value here" value={input} />
+                <button disabled={input && input.trim() !== '' ? false : true} onClick={handleGenerateQrCode}>Generate</button>
             </div>
             <div>
                 <QRCode 
                 id="qr-code-value"
-                value=""
-                
+                value={qrCode}
+                size={400}
+                bgColor="white"
                 />
             </div>
 
