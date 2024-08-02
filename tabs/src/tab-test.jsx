@@ -1,6 +1,7 @@
 // this will be the parent component in which we're gonna use the tabs.jsx 
 
 import Tabs from "./tabs";
+import './tabs.css';
 
 
 function RandomComponent(){
