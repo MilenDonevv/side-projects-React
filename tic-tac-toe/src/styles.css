@@ -40,10 +40,10 @@ By using this clearfix technique, you ensure that the container
 */
 
 
-.tic-tac-toe-container::after {
-    clear: both;
+.tic-tac-toe-container /*  ::after */ {
+    /* clear: both;
     content: "";
-    display: table;
+    display: table; */
     display: flex;
     flex-direction: column;
     align-items: center;
