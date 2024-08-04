@@ -1,9 +1,10 @@
+import FeatureFlags from "."
 
 
 function App() {
 
   return (
-
+    <FeatureFlags />
   )
 }
 
