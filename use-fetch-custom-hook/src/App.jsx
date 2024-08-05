@@ -1,9 +1,10 @@
+import UseFetchHookTest from "./test.jsx"
 
 
 function App() {
 
   return (
-
+    <UseFetchHookTest />
   )
 }
 
