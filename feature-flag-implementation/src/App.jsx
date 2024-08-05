@@ -1,10 +1,13 @@
-import FeatureFlags from "."
+import FeatureFlags from "./index.jsx"
+import FeatureFlagGlobalState from "../context"
 
 
 function App() {
 
   return (
-    <FeatureFlags />
+    <FeatureFlagGlobalState> 
+      <FeatureFlags />
+    </FeatureFlagGlobalState>
   )
 }
 

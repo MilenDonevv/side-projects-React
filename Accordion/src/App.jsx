@@ -1,9 +1,6 @@
-import { useState } from 'react'
-import './App.css'
 import Accordion from './components/accordion';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
 
   return (
       <div className="App">
@@ -12,4 +9,3 @@ function App() {
   );
 }
 
-export default App
