@@ -1,8 +1,11 @@
+import { useRef } from "react"
 
 
 
 
 export default function ScrollToSection() {
+
+    const ref = useRef();
 
     const data = [
         {
@@ -18,7 +21,7 @@ export default function ScrollToSection() {
             style: {
                 width: '100%',
                 height: '600px',
-                background: 'grey'
+                background: 'orange'
             }
         },
         {
@@ -47,15 +50,27 @@ export default function ScrollToSection() {
         },
     ]
 
+    function handleScrollToSection() {
+        let position = ref.current.getBoundingClientRect().top;
+
+        window.scrollTo({
+            top: position,
+            behavior: 'smooth'
+        });
+    }
+
     return (
         <div>
             <h1>Scroll to a particular section</h1>
-            <button>Click to Scroll</button>
+            <button onClick={handleScrollToSection}>Click to Scroll</button>
             {
-                data.map(item => <div style={item.style}>
+                data.map((item, index) => 
+                <div ref={index === 1 ? ref : null} style={item.style}>
                     <h3>{item.label}</h3>
                 </div>)
             }
         </div>
     )
 }
+
+// index === 1 ?   --- here we set which paragraph we need to go to
