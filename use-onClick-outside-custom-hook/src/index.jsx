@@ -1,22 +1,27 @@
-import { useState } from "react"
+import { useEffect } from "react";
 
 
+export default function useOutsideClick(ref, handler) {
 
 
-export default function UseOnclickOutsideTest() {
+    useEffect(() => {
 
-    const [showContent, setShowContent] = useState(false);
+        function listener(event) {
 
-    return (
-        <div>
-            {
-                showContent 
-                ? <div>
-                    <h1>This is a random content</h1>
-                    <p>Click outside of this to close it. Otherwise it will not close</p>
-                </div>
-                : <button onClick={() => setShowContent(true)}>Show Content</button> 
+            if (!ref.current || ref.current.contains(event.target)) {
+                return
             }
-        </div>
-    )
+
+            handler(event)
+        }
+
+        document.addEventListener('mousedown', listener);
+        document.addEventListener('touchstart', listener);
+
+        return () => {
+            document.removeEventListener('mousedown', listener);
+            document.removeEventListener('touchstart', listener);
+        }
+
+        }, [handler, ref])
 }

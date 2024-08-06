@@ -1,4 +1,4 @@
-import UseOnclickOutsideTest from "./index.jsx"
+import UseOnclickOutsideTest from "./test.jsx"
 
 function App() {
 
