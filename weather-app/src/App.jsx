@@ -1,10 +1,11 @@
+import Weather from "./index.jsx"
 
 
 function App() {
 
   return (
 
-    <WeatherApp />
+    <Weather />
   )
 }
 
