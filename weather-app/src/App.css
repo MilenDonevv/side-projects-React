@@ -3,6 +3,18 @@ body {
     padding: 0;
 }
 
+.App {
+    text-align: center;
+    margin: 50px auto 0px;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 20px;
+    height: 470px;
+    padding: 20px 15px;
+    background: rgb(0, 255, 166);
+}
+
+
 .search-engine {
     width: 100%;
     display: flex;
@@ -33,4 +45,46 @@ body {
     outline: none;
     cursor: pointer;
     padding: 13px 15px;
+}
+
+.city-name {
+    margin-bottom: 10px;
+}
+
+.loading {
+    font-size: 60px;
+    font-weight: border;
+    color: black;
+}
+
+.date {
+    font-size: 18px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.temperature {
+    font-size: 64px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.description {
+    color: #000;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
 }

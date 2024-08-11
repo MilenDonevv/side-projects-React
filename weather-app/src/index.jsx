@@ -39,6 +39,10 @@ export default function Weather() {
         });
     }
 
+    function kelvinToCelsius(kelvin) {
+        return (kelvin - 273.15).toFixed(1);  // Convert to Celsius
+    }
+
     async function handleSearch() {
         fetchWeatherData(search);
     }
@@ -58,7 +62,7 @@ export default function Weather() {
             />
             {
                 loading ?
-                    <div>Loading...</div> : (
+                    <div className="loading">Loading...</div> : (
                     <div>
                         <div className="city-name">
                             <h2>{weatherData?.name}, <span>{weatherData?.sys?.country}</span></h2>
@@ -66,16 +70,17 @@ export default function Weather() {
                         <div className="date">
                             <span>{getCurrentData()}</span>
                         </div>
-                        <div>
-                            {weatherData?.main?.temp}
-                            <p>description</p>
-                            {weatherData && weatherData.weather && weatherData.weather[0] ? weatherData.weather[0].description : ''}
+                        <div className="temperature">
+                            {kelvinToCelsius(weatherData?.main?.temp)}°C
                         </div>
+                            <p className="description">
+                            {weatherData && weatherData.weather && weatherData.weather[0] ? weatherData.weather[0].description : ''}
+                            </p>
                         <div className="weather-info">
                             <div>
                                 <div>
                                     <p>Wind Speed</p>
-                                    <p className="wind">{weatherData?.wind?.speed}</p>
+                                    <p className="wind">{weatherData?.wind?.speed} m/s</p>
                                 </div>
                             </div>
                             <div>
