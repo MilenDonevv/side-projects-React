@@ -8,8 +8,6 @@ import  { GlobalContext }  from "../../context/context.jsx";
 export default function Navbar() {
 
     const {searchParam, setSearchParam, handleSubmit} = useContext(GlobalContext)
-
-    console.log(searchParam);
     
 
     return (
