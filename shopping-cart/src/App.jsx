@@ -1,25 +1,26 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./pages/home"
 import Cart from "./pages/cart"
+import Header from "./components/header/header"
 
 function App() {
 
   return (
     <div>
-        <h1>Navbar</h1>
+      <Header />
       <Routes>
         <Route
-        exact path="/"
-        element={<Home />}
+          exact path="/"
+          element={<Home />}
         >
         </Route>
-          
+
         <Route
-        path="/cart"
-        element={<Cart />}        
+          path="/cart"
+          element={<Cart />}
         >
         </Route>
-            
+
       </Routes>
     </div>
   )
