@@ -68,7 +68,7 @@ export default function Summary({ onClose, isOpen, totalExpense, totalIncome }) 
                     p={4}
                 >
                     <Heading>
-                        <TransactionChartSummary expense={100} income={1000} />
+                        <TransactionChartSummary expense={totalExpense} income={totalIncome} />
                     </Heading>
                 </Box>
             </Flex>
