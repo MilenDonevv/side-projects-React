@@ -1,5 +1,4 @@
 
-import { fill } from 'lodash'
 import Chart from 'react-apexcharts'
 
 
