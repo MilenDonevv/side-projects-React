@@ -61,8 +61,8 @@ export default function Main() {
                 flexDirection={['column', 'column', 'row', 'row']}
                 gap={4}
             >
-                <ExpenseView />
-                <ExpenseView />
+                <ExpenseView data={allTransactions.filter(item => item.type === 'income')} type={'income'} />
+                <ExpenseView data={allTransactions.filter(item => item.type === 'expense')} type={'expense'} />
             </Flex>
         </Flex>
     );
