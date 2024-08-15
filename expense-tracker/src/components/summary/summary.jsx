@@ -2,7 +2,7 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import TransactionForm from "../add-transaction/transaction-form";
 import TransactionChartSummary from "../chart/chart";
 
-export default function Summary({ onClose, isOpen }) {
+export default function Summary({ onClose, isOpen, totalExpense, totalIncome }) {
     return (
         <Box
             p={6}
@@ -32,7 +32,7 @@ export default function Summary({ onClose, isOpen }) {
                     p={4}
                 >
                     <Heading size={'md'} mb={'4'} color={'gray.600'}>
-                        Balance is 100
+                        Balance is ${totalIncome - totalExpense}
                     </Heading>
                     <Flex
                         justifyContent={'space-between'}
@@ -47,11 +47,11 @@ export default function Summary({ onClose, isOpen }) {
                         gap={4}
                     >
                         <Flex flexDirection={'column'} alignItems={'center'}>
-                            <Heading color={'gray.700'}>$100</Heading>
+                            <Heading color={'gray.700'}>${totalIncome}</Heading>
                             <Text color={'gray.600'}>Total Income</Text>
                         </Flex>
                         <Flex flexDirection={'column'} alignItems={'center'}>
-                            <Heading color={'gray.700'}>$100</Heading>
+                            <Heading color={'gray.700'}>${totalExpense}</Heading>
                             <Text color={'gray.600'}>Total Expense</Text>
                         </Flex>
                     </Flex>
