@@ -6,4 +6,3 @@ mongoose.connect('mongodb+srv://milendonev95:FiUfoLCylcX15FpV@mern-app.fjgcf.mon
 .then(() => console.log('Connected mongo db'))
 .catch(e => console.log(e));
 
-
